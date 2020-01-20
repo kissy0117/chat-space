@@ -1,0 +1,18 @@
+.wrapper
+  .chatside
+    .chatside-header
+      .chatside-header__box
+        %p.chatside-header__box__user-name NAME
+        %ul.chatside-header__box__menu
+          %li.chatside-header__box__menu__new-group
+            = link_to "#", class: "new-group__btn" do
+              = icon('fa', 'edit', class: 'new-group')
+          %li.chatside-header__box__menu__edit-user
+            = link_to "#", class: "edit-user__btn" do
+              = icon('fa', 'cog', class: 'edit-user')
+    .chatside-groups
+      .chatside-groups__group
+        .chatside-groups__group__box
+          %p.chatside-groups__group__box__group-name TECH::EXPERT
+        .chatside-groups__group__message
+          %p.chatside-groups__group__message__latest-message latest
