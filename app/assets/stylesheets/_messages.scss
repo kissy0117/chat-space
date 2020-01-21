@@ -55,13 +55,14 @@
       margin-bottom: 40px;
       &__box{
         margin-bottom: 5px;
-        p{
+        a{
           font-size: 15px;
           color: white;
+          text-decoration: none;
         }
       }
       &__message{
-        p{
+        a{
           font-size: 11px;
           color: white;
         }
