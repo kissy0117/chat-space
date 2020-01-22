@@ -12,11 +12,10 @@
             = link_to edit_user_path(current_user), class: "edit-user__btn" do
               = icon('fa', 'cog', class: 'edit-user')
     .chatside-groups
-      .chatside-groups__group
-        .chatside-groups__group__box
-          - current_user.groups.each do |group|
-            .chatside-groups__group__box-group
-              = link_to '#' do
-                = group.name
-            .group__message
-              メッセージはまだありません
+      - current_user.groups.each do |group|
+        .chatside-groups__group
+          .chatside-groups__group__box
+            = link_to group_messages_path(group) do
+              = group.name
+          .chatside-groups__group__message
+            メッセージはまだありません
