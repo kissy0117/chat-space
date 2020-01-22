@@ -1,37 +1,24 @@
 .chat-main
-
   .main-header
     .main-header__left__box
-      %h2.main-header__left__box-name GROUP
-      %ul.main-header__left__box__member-list
-        %li.main-header__left__box__member-list__member MEMBER
-    = link_to "#", class: "main-header__edit-btn" do
+      %h2.main-header__left__box-name
+        = @group.name
+      %ul.main-header__left__box__member__list-member 
+        MEMBER:
+        - @group.users.each do |user|
+          %li
+            = user.name
+    = link_to edit_group_path(@group), class: "main-header__edit-btn" do
       = "Edit"
 
   .messages
-    .messages-message__upper
-      %p.messages-message__upper-name YUKI
-      %p.messages-message__upper-date 2020/1/18(Sat)
-    .messages-message__under
-      %p.messages-messages__under-text こんにちは。 
-
-    .messages-message__upper
-      %p.messages-message__upper-name YUKINARI
-      %p.messages-message__upper-date 2020/1/18(Sat)
-    .messages-message__under
-      %p.messages-messages__under-text 人生にサプライズを。 
-
-    .messages-message__upper
-      %p.messages-message__upper-name TAKUYA∞
-      %p.messages-message__upper-date 2020/1/18(Sat)
-    .messages-message__under
-      %p.messages-messages__under-text 人生一度きり。 
-
+    = render @messages
+   
   .form
-    %form.new_message
+    = form_for [@group, @message], html: {class: "new-messages"} do |f|
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
+        = f.text_field :body, class: "input-box__text", placeholder: "type a message"
+        = f.label :image, class: "input-box__image" do
           =icon('fas','image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn"}
+          = f.file_field :image, class: "input-box__image__file"
+      = f.submit 'Send', class: "submit-btn"
