@@ -1,11 +1,11 @@
-.message
-  .message-upper
-    %p.message-upper__name 
+.messages
+  .messages-message__upper
+    %p.messages-message__upper-name 
       = message.user.name
-    %p.message-upper__date 
+    %p.messages-message__upper-date 
       = message.created_at.strftime ("%Y年%m月%d日 %H時%M分")
-  .message-under
+  .messages-message__under
     - if message.body.present?
-      %p.message-under__text
+      %p.messages-messages__under-text
       = message.body
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
