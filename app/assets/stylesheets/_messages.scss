@@ -111,25 +111,25 @@
   .messages{
     height: calc(100vh - 190px);
     padding: 46px 40px;
-    &-message{
+    .message{
       padding-bottom: 40px;
-      &__upper{
+      &-upper{
         display: flex;
         margin-bottom: 12px;
-        &-name{
+        &__name{
           font-size: 16px;
           color: #333333;
           font-weight: bold;
         }
-        &-date{
+        &__date{
           font-size: 12px;
           color: #999999;
           margin-left: 10px;
         }
       }
-      &__under{
+      &-under{
         margin-bottom: 46px;
-        &-text{
+        &__text{
           font-size: 14px;
           color: #434A54;
         }
