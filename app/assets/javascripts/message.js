@@ -104,7 +104,7 @@ $(function(){
       var html = `<div class="message" data-message-id= ${message.id} >
         <div class="message-upper">
           <div class="message-upper__name">
-            ${message.user.name}
+            ${message.user_name}
           </div>
           <div class="message-upper__date">
             ${message.created_at}
